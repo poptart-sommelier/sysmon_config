@@ -76,6 +76,7 @@
 	      <SourceImage condition="is">C:\Windows\system32\lsass.exe</SourceImage>
 	      <SourceImage condition="image">Sysmon.exe</SourceImage>
 	      <SourceImage condition="image">GoogleUpdate.exe</SourceImage>
+	      <SourceImage condition="is">C:\Windows\System32\VBoxService.exe</SourceImage>
 	      <SourceImage condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</SourceImage>
 	      <SourceImage condition="is">C:\Program Files\Windows Defender\MsMpEng.exe</SourceImage>
 	      <SourceImage condition="is">C:\Program Files\Microsoft VS Code\Code.exe</SourceImage>
