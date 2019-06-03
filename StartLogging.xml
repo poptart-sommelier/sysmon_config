@@ -5,41 +5,41 @@
       <!-- Event ID 1 == Process Creation. Log all newly created processes except -->
       <ProcessCreate onmatch="exclude">
 	      <Image condition="contains">splunk</Image>
-	      <Image condition="contains">btool.exe</Image>
+	      <Image condition="image">btool.exe</Image>
 	      <Image condition="contains">SnareCore</Image>
 	      <Image condition="contains">nxlog</Image>
-	      <Image condition="contains">winlogbeat</Image>
+	      <Image condition="image">winlogbeat.exe</Image>
 	      <Image condition="contains">vboxservice</Image>
 	      <Image condition="contains">Microsoft Monitoring Agent\Agent\MonitoringHost.exe</Image>
 	      <Image condition="begin with">C:\Program Files\NVIDIA Corporation\Display\</Image>
-	      <Image condition="is">C:\Program Files\Dell\SupportAssist\pcdrcui.exe</Image>
-	      <Image condition="is">C:\Program Files\Dell\SupportAssist\koala.exe</Image>
+	      <Image condition="image">C:\Program Files\Dell\SupportAssist\pcdrcui.exe</Image>
+	      <Image condition="image">C:\Program Files\Dell\SupportAssist\koala.exe</Image>
 	      <Image condition="begin with">C:\Program Files\Windows Defender</Image>
-	      <Image condition="is">C:\Windows\System32\audiodg.exe</Image>
-	      <Image condition="is">C:\Windows\SysWOW64\Macromed\Flash\FlashPlayerUpdateService.exe</Image>
-	      <Image condition="is">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
-	      <Image condition="end with">\Sysmon.exe</Image>
-	      <Image condition="end with">\Sysmon64.exe</Image>
+	      <Image condition="image">C:\Windows\System32\audiodg.exe</Image>
+	      <Image condition="image">C:\Windows\SysWOW64\Macromed\Flash\FlashPlayerUpdateService.exe</Image>
+	      <Image condition="image">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
+	      <Image condition="image">Sysmon.exe</Image>
+	      <Image condition="image">Sysmon64.exe</Image>
 	      <CommandLine condition="begin with">C:\WIndows\System32\poqexec.exe /noreboot /transaction</CommandLine>
       </ProcessCreate>
       <!-- Event ID 2 == File Creation Time. POC - Log file modified creation time -->
       <FileCreateTime onmatch="exclude"/>
       <!-- Event ID 3 == Network Connection. Log all initiated network connection except -->
       <NetworkConnect onmatch="exclude">
-	      <Image condition="is">C:\Program Files\Microsoft Office\Office15\ONENOTE.EXE</Image>
-	      <Image condition="end with">Spotify.exe</Image>
-              <Image condition="end with">OneDrive.exe</Image>
-	      <Image condition="end with">AppData\Roaming\Dashlane\Dashlane.exe</Image>
-	      <Image condition="end with">AppData\Roaming\Dashlane\DashlanePlugin.exe</Image>
-	      <Image condition="end with">winlogbeat.exe</Image>
+	      <Image condition="image">C:\Program Files\Microsoft Office\Office15\ONENOTE.EXE</Image>
+	      <Image condition="image">Spotify.exe</Image>
+              <Image condition="image">OneDrive.exe</Image>
+	      <Image condition="image">Dashlane.exe</Image>
+	      <Image condition="image">DashlanePlugin.exe</Image>
+	      <Image condition="image">winlogbeat.exe</Image>
 	      <Image condition="contains">vboxservice</Image>
-	      <Image condition="is">C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeClickToRun.exe</Image>
-	      <Image condition="is">C:\Program Files (x86)\Common Files\Acronis\SyncAgent\syncagentsrv.exe</Image>
-	      <Image condition="is">C:\Windows\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy\SearchUI.exe</Image>
-	      <Image condition="is">C:\Windows\System32\CompatTelRunner.exe</Image>
-	      <Image condition="is">C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\LMS\LMS.exe</Image>
-	      <Image condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
-	      <Image condition="is">C:\Program Files\Microsoft VS Code\Code.exe</Image>
+	      <Image condition="image">C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeClickToRun.exe</Image>
+	      <Image condition="image">C:\Program Files (x86)\Common Files\Acronis\SyncAgent\syncagentsrv.exe</Image>
+	      <Image condition="image">C:\Windows\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy\SearchUI.exe</Image>
+	      <Image condition="image">C:\Windows\System32\CompatTelRunner.exe</Image>
+	      <Image condition="image">C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\LMS\LMS.exe</Image>
+	      <Image condition="image">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
+	      <Image condition="image">C:\Program Files\Microsoft VS Code\Code.exe</Image>
       </NetworkConnect>
       <!-- Event ID 5 == Process Terminated. Log processes terminated -->
       <ProcessTerminate onmatch="exclude" />
@@ -47,6 +47,8 @@
       <DriverLoad onmatch="exclude">
 	      <Signature condition="contains">microsoft</Signature>
 	      <Signature condition="contains">windows</Signature>
+	      <Signature condition="contains">virtualbox</Signature>
+	      <Signature condition="contains">oracle</Signature>
 	      <Signature condition="is">VMware</Signature>
 	      <Signature condition="begin with">Intel </Signature>
       </DriverLoad>
@@ -58,20 +60,20 @@
 	      <Image condition="image">Sysmon64.exe</Image>
 	      <Image condition="image">winlogbeat.exe</Image>
 	      <Image condition="contains">vboxservice</Image>
-	      <Image condition="is">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
-	      <Image condition="is">C:\Windows\System32\taskeng.exe</Image>
-	      <Image condition="is">C:\Program Files\VMware\VMware Tools\TPAutoConnect.exe</Image>
-	      <Image condition="is">C:\Program Files\Windows Defender\NisSrv.exe</Image>
-	      <Image condition="is">C:\Program Files\Windows Defender\MsMpEng.exe</Image>
+	      <Image condition="image">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
+	      <Image condition="image">C:\Windows\System32\taskeng.exe</Image>
+	      <Image condition="image">C:\Program Files\VMware\VMware Tools\TPAutoConnect.exe</Image>
+	      <Image condition="image">C:\Program Files\Windows Defender\NisSrv.exe</Image>
+	      <Image condition="image">C:\Program Files\Windows Defender\MsMpEng.exe</Image>
       </ImageLoad>   
       <!-- Event ID 8 == CreateRemoteThread. Log everything -->
       <CreateRemoteThread onmatch="exclude" />
       <!-- Event ID 9 == RawAccessRead. Log everything -->
       <RawAccessRead onmatch="exclude">
-	      <Image condition="is">C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</Image>
-	      <Image condition="is">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
-	      <Image condition="end with">\Sysmon.exe</Image>
-	      <Image condition="end with">\Sysmon64.exe</Image>
+	      <Image condition="image">vmtoolsd.exe</Image>
+	      <Image condition="image">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
+	      <Image condition="image">Sysmon.exe</Image>
+	      <Image condition="image">Sysmon64.exe</Image>
       </RawAccessRead>
       <!-- Event ID 10 == ProcessAccess. Log everything except -->
       <ProcessAccess onmatch="include">
@@ -80,21 +82,24 @@
       <FileCreate onmatch="exclude">
 	      <Image condition="image">SearchIndexer.exe</Image>
 	      <Image condition="image">winlogbeat.exe</Image>
-	      <Image condition="is">C:\Windows\system32\mmc.exe</Image>
-	      <Image condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
-	      <Image condition="is">C:\Program Files\Microsoft VS Code\Code.exe</Image>  
+	      <Image condition="image">C:\Windows\system32\mmc.exe</Image>
+	      <Image condition="image">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
+	      <Image condition="image">C:\Program Files\Microsoft VS Code\Code.exe</Image>  
       </FileCreate>
       <!-- Event ID 12,13,14 == RegObject added/deleted, RegValue Set, RegObject Renamed. Log everything except -->
       <RegistryEvent onmatch="exclude">
-	      <Image condition="is">C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</Image>
-	      <Image condition="is">C:\Windows\system32\mmc.exe</Image>
-	      <Image condition="is">C:\Windows\system32\taskeng.exe</Image>
-	      <Image condition="is">C:\Windows\system32\lsass.exe</Image>
-	      <Image condition="is">C:\Windows\Sysmon.exe</Image>
-	      <Image condition="is">C:\Windows\Sysmon64.exe</Image>
+	      <Image condition="image">C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</Image>
+	      <Image condition="begin with">C:\Program Files\WindowsApps\microsoft.windowscommunicationsapps</Image>
+	      <Image condition="image">C:\Windows\system32\mmc.exe</Image>
+	      <Image condition="image">C:\Windows\system32\taskeng.exe</Image>
+	      <Image condition="image">C:\Windows\system32\lsass.exe</Image>
+	      <Image condition="image">C:\Windows\system32\runtimebroker.exe</Image>
+	      <Image condition="image">Sysmon.exe</Image>
+	      <Image condition="image">Sysmon64.exe</Image>
+	      <Image condition="image">C:\Windows\system32\ctfmon.exe</Image>
 	      <Image condition="image">GoogleUpdate.exe</Image>
-	      <Image condition="is">C:\Program Files\VMware\VMware Tools\TPAutoConnect.exe</Image>
-	      <Image condition="is">C:\Program Files\Windows Defender\NisSrv.exe</Image>
+	      <Image condition="image">C:\Program Files\VMware\VMware Tools\TPAutoConnect.exe</Image>
+	      <Image condition="image">C:\Program Files\Windows Defender\NisSrv.exe</Image>
 	      <TargetObject condition="is">\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\Microsoft Print to PDF\PrinterDriverData</TargetObject>
 	      <TargetObject condition="end with">LanguageList</TargetObject>
       </RegistryEvent>
@@ -102,7 +107,7 @@
       <FileCreateStreamHash onmatch="exclude" />
       <!-- Event ID 17,18 == PipeEvent. Log Named pipe created & Named pipe connected -->
       <PipeEvent onmatch="exclude">
-              <Image condition="is">C:\Windows\System32\VboxService.exe</Image>
+              <Image condition="image">C:\Windows\System32\VboxService.exe</Image>
       </PipeEvent>
       <!-- Event ID 19,20,21, == WmiEvent. Log all WmiEventFilter, WmiEventConsumer, WmiEventConsumerToFilter activity-->
       <WmiEvent onmatch="exclude" />
