@@ -56,6 +56,7 @@
 	      <Image condition="image">vmtoolsd.exe</Image>
 	      <Image condition="image">Sysmon.exe</Image>
 	      <Image condition="image">Sysmon64.exe</Image>
+	      <Image condition="image">winlogbeat.exe</Image>
 	      <Image condition="contains">vboxservice</Image>
 	      <Image condition="is">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
 	      <Image condition="is">C:\Windows\System32\taskeng.exe</Image>
