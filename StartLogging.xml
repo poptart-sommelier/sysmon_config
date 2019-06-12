@@ -89,6 +89,7 @@
       <!-- Event ID 12,13,14 == RegObject added/deleted, RegValue Set, RegObject Renamed. Log everything except -->
       <RegistryEvent onmatch="exclude">
 	      <Image condition="image">C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</Image>
+	      <Image condition="image">TiWorker.exe</Image> 
 	      <Image condition="begin with">C:\Program Files\WindowsApps\microsoft.windowscommunicationsapps</Image>
 	      <Image condition="image">C:\Windows\system32\mmc.exe</Image>
 	      <Image condition="image">C:\Windows\system32\taskeng.exe</Image>
