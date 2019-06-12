@@ -111,6 +111,6 @@
       </PipeEvent>
       <!-- Event ID 19,20,21, == WmiEvent. Log all WmiEventFilter, WmiEventConsumer, WmiEventConsumerToFilter activity-->
       <WmiEvent onmatch="exclude" />
-      <DNSEvent onmatch="exclude" />
+      <DnsQuery onmatch="exclude" />
   </EventFiltering>
 </Sysmon>
