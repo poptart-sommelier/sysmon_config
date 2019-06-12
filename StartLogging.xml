@@ -111,6 +111,9 @@
       </PipeEvent>
       <!-- Event ID 19,20,21, == WmiEvent. Log all WmiEventFilter, WmiEventConsumer, WmiEventConsumerToFilter activity-->
       <WmiEvent onmatch="exclude" />
-      <DnsQuery onmatch="exclude" />
+      <DnsQuery onmatch="exclude">
+	      <Image condition="image">Sysmon.exe</Image>
+	      <Image condition="image">Sysmon64.exe</Image>
+      </DnsQuery>
   </EventFiltering>
 </Sysmon>
