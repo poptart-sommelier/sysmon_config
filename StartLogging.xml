@@ -7,21 +7,21 @@
 		<RuleGroup name="" groupRelation="or">
 			<ProcessCreate onmatch="exclude">
 				<Image condition="contains">splunk</Image>
-				<Image condition="image">btool.exe</Image>
+				<Image condition="end with">btool.exe</Image>
 				<Image condition="contains">SnareCore</Image>
 				<Image condition="contains">nxlog</Image>
-				<Image condition="image">winlogbeat.exe</Image>
+				<Image condition="end with">winlogbeat.exe</Image>
 				<Image condition="contains">vboxservice</Image>
 				<Image condition="contains">Microsoft Monitoring Agent\Agent\MonitoringHost.exe</Image>
 				<Image condition="begin with">C:\Program Files\NVIDIA Corporation\Display\</Image>
-				<Image condition="image">C:\Program Files\Dell\SupportAssist\pcdrcui.exe</Image>
-				<Image condition="image">C:\Program Files\Dell\SupportAssist\koala.exe</Image>
+				<Image condition="is">C:\Program Files\Dell\SupportAssist\pcdrcui.exe</Image>
+				<Image condition="is">C:\Program Files\Dell\SupportAssist\koala.exe</Image>
 				<Image condition="begin with">C:\Program Files\Windows Defender</Image>
-				<Image condition="image">C:\Windows\System32\audiodg.exe</Image>
-				<Image condition="image">C:\Windows\SysWOW64\Macromed\Flash\FlashPlayerUpdateService.exe</Image>
-				<Image condition="image">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
-				<Image condition="image">Sysmon.exe</Image>
-				<Image condition="image">Sysmon64.exe</Image>
+				<Image condition="is">C:\Windows\System32\audiodg.exe</Image>
+				<Image condition="is">C:\Windows\SysWOW64\Macromed\Flash\FlashPlayerUpdateService.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
+				<Image condition="end with">Sysmon.exe</Image>
+				<Image condition="end with">Sysmon64.exe</Image>
 				<CommandLine condition="begin with">C:\WIndows\System32\poqexec.exe /noreboot /transaction</CommandLine>
 			</ProcessCreate>
 		</RuleGroup>
@@ -34,20 +34,20 @@
 		<!-- Event ID 3 == Network Connection. Log all initiated network connection except -->
 		<RuleGroup name="" groupRelation="or">
 			<NetworkConnect onmatch="exclude">
-				<Image condition="image">C:\Program Files\Microsoft Office\Office15\ONENOTE.EXE</Image>
-				<Image condition="image">Spotify.exe</Image>
-				<Image condition="image">OneDrive.exe</Image>
-				<Image condition="image">Dashlane.exe</Image>
-				<Image condition="image">DashlanePlugin.exe</Image>
-				<Image condition="image">winlogbeat.exe</Image>
+				<Image condition="is">C:\Program Files\Microsoft Office\Office15\ONENOTE.EXE</Image>
+				<Image condition="end with">Spotify.exe</Image>
+				<Image condition="end with">OneDrive.exe</Image>
+				<Image condition="end with">Dashlane.exe</Image>
+				<Image condition="end with">DashlanePlugin.exe</Image>
+				<Image condition="end with">winlogbeat.exe</Image>
 				<Image condition="contains">vboxservice</Image>
-				<Image condition="image">C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeClickToRun.exe</Image>
-				<Image condition="image">C:\Program Files (x86)\Common Files\Acronis\SyncAgent\syncagentsrv.exe</Image>
-				<Image condition="image">C:\Windows\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy\SearchUI.exe</Image>
-				<Image condition="image">C:\Windows\System32\CompatTelRunner.exe</Image>
-				<Image condition="image">C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\LMS\LMS.exe</Image>
-				<Image condition="image">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
-				<Image condition="image">C:\Program Files\Microsoft VS Code\Code.exe</Image>
+				<Image condition="is">C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeClickToRun.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Common Files\Acronis\SyncAgent\syncagentsrv.exe</Image>
+				<Image condition="is">C:\Windows\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy\SearchUI.exe</Image>
+				<Image condition="is">C:\Windows\System32\CompatTelRunner.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\LMS\LMS.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
+				<Image condition="is">C:\Program Files\Microsoft VS Code\Code.exe</Image>
 			</NetworkConnect>
 		</RuleGroup>
 
@@ -71,17 +71,17 @@
 		<!-- Event ID 7 == Image Loaded. Log everything except -->
 		<RuleGroup name="" groupRelation="or">
 			<ImageLoad onmatch="exclude">
-				<Image condition="image">chrome.exe</Image>
-				<Image condition="image">vmtoolsd.exe</Image>
-				<Image condition="image">Sysmon.exe</Image>
-				<Image condition="image">Sysmon64.exe</Image>
-				<Image condition="image">winlogbeat.exe</Image>
+				<Image condition="end with">chrome.exe</Image>
+				<Image condition="end with">vmtoolsd.exe</Image>
+				<Image condition="end with">Sysmon.exe</Image>
+				<Image condition="end with">Sysmon64.exe</Image>
+				<Image condition="end with">winlogbeat.exe</Image>
 				<Image condition="contains">vboxservice</Image>
-				<Image condition="image">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
-				<Image condition="image">C:\Windows\System32\taskeng.exe</Image>
-				<Image condition="image">C:\Program Files\VMware\VMware Tools\TPAutoConnect.exe</Image>
-				<Image condition="image">C:\Program Files\Windows Defender\NisSrv.exe</Image>
-				<Image condition="image">C:\Program Files\Windows Defender\MsMpEng.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
+				<Image condition="is">C:\Windows\System32\taskeng.exe</Image>
+				<Image condition="is">C:\Program Files\VMware\VMware Tools\TPAutoConnect.exe</Image>
+				<Image condition="is">C:\Program Files\Windows Defender\NisSrv.exe</Image>
+				<Image condition="is">C:\Program Files\Windows Defender\MsMpEng.exe</Image>
 			</ImageLoad>
 		</RuleGroup>
 
@@ -93,10 +93,10 @@
 		<!-- Event ID 9 == RawAccessRead. Log everything -->
 		<RuleGroup name="" groupRelation="or">
 			<RawAccessRead onmatch="exclude">
-				<Image condition="image">vmtoolsd.exe</Image>
-				<Image condition="image">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
-				<Image condition="image">Sysmon.exe</Image>
-				<Image condition="image">Sysmon64.exe</Image>
+				<Image condition="end with">vmtoolsd.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Google\Update\GoogleUpdate.exe</Image>
+				<Image condition="end with">Sysmon.exe</Image>
+				<Image condition="end with">Sysmon64.exe</Image>
 			</RawAccessRead>
 		</RuleGroup>
 
@@ -108,30 +108,30 @@
 		<!-- Event ID 11 == FileCreate. Log everything except -->
 		<RuleGroup name="" groupRelation="or">
 			<FileCreate onmatch="exclude">
-				<Image condition="image">SearchIndexer.exe</Image>
-				<Image condition="image">winlogbeat.exe</Image>
-				<Image condition="image">C:\Windows\system32\mmc.exe</Image>
-				<Image condition="image">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
-				<Image condition="image">C:\Program Files\Microsoft VS Code\Code.exe</Image>  
+				<Image condition="end with">SearchIndexer.exe</Image>
+				<Image condition="end with">winlogbeat.exe</Image>
+				<Image condition="is">C:\Windows\system32\mmc.exe</Image>
+				<Image condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
+				<Image condition="is">C:\Program Files\Microsoft VS Code\Code.exe</Image>  
 			</FileCreate>
 		</RuleGroup>
 
 		<!-- Event ID 12,13,14 == RegObject added/deleted, RegValue Set, RegObject Renamed. Log everything except -->
 		<RuleGroup name="" groupRelation="or">
 			<RegistryEvent onmatch="exclude">
-				<Image condition="image">C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</Image>
-				<Image condition="image">TiWorker.exe</Image> 
+				<Image condition="is">C:\Program Files\VMware\VMware Tools\vmtoolsd.exe</Image>
+				<Image condition="end with">TiWorker.exe</Image> 
 				<Image condition="begin with">C:\Program Files\WindowsApps\microsoft.windowscommunicationsapps</Image>
-				<Image condition="image">C:\Windows\system32\mmc.exe</Image>
-				<Image condition="image">C:\Windows\system32\taskeng.exe</Image>
-				<Image condition="image">C:\Windows\system32\lsass.exe</Image>
-				<Image condition="image">C:\Windows\system32\runtimebroker.exe</Image>
-				<Image condition="image">Sysmon.exe</Image>
-				<Image condition="image">Sysmon64.exe</Image>
-				<Image condition="image">C:\Windows\system32\ctfmon.exe</Image>
-				<Image condition="image">GoogleUpdate.exe</Image>
-				<Image condition="image">C:\Program Files\VMware\VMware Tools\TPAutoConnect.exe</Image>
-				<Image condition="image">C:\Program Files\Windows Defender\NisSrv.exe</Image>
+				<Image condition="is">C:\Windows\system32\mmc.exe</Image>
+				<Image condition="is">C:\Windows\system32\taskeng.exe</Image>
+				<Image condition="is">C:\Windows\system32\lsass.exe</Image>
+				<Image condition="is">C:\Windows\system32\runtimebroker.exe</Image>
+				<Image condition="end with">Sysmon.exe</Image>
+				<Image condition="end with">Sysmon64.exe</Image>
+				<Image condition="is">C:\Windows\system32\ctfmon.exe</Image>
+				<Image condition="end with">GoogleUpdate.exe</Image>
+				<Image condition="is">C:\Program Files\VMware\VMware Tools\TPAutoConnect.exe</Image>
+				<Image condition="is">C:\Program Files\Windows Defender\NisSrv.exe</Image>
 				<TargetObject condition="is">\REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Print\Printers\Microsoft Print to PDF\PrinterDriverData</TargetObject>
 				<TargetObject condition="end with">LanguageList</TargetObject>
 			</RegistryEvent>
@@ -147,7 +147,7 @@
 		<!-- Event ID 17,18 == PipeEvent. Log Named pipe created & Named pipe connected -->
 		<RuleGroup name="" groupRelation="or">
 			<PipeEvent onmatch="exclude">
-				<Image condition="image">C:\Windows\System32\VboxService.exe</Image>
+				<Image condition="is">C:\Windows\System32\VboxService.exe</Image>
 			</PipeEvent>
 		</RuleGroup>
 
@@ -160,8 +160,8 @@
 		<!-- Event ID 22 == DNS. Log pretty much everything -->
 		<RuleGroup name="" groupRelation="or">
 			<DnsQuery onmatch="exclude">
-				<Image condition="contains">Sysmon.exe</Image>
-				<Image condition="contains">Sysmon64.exe</Image>
+				<Image condition="end with">Sysmon.exe</Image>
+				<Image condition="end with">Sysmon64.exe</Image>
 			</DnsQuery>
 		</RuleGroup>
 
